@@ -1,4 +1,4 @@
-Debian/Ubuntu/Mint
+**_Debian/Ubuntu/Mint_**
  
 Check Virtualization Extension
 Run this command to make sure you’ve enabled virtualization in on your computer. It should be above 0
@@ -30,9 +30,9 @@ sudo usermod -aG input $USER
 sudo usermod -aG disk $USER
 ```
 
-Arch Linux 
+**_Arch Linux_**
 
-Arch Linux  
+Install QEMU and Virtual Machine Manager
 ```bash
 sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables libguestfs
 ```
