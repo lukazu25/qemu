@@ -1,4 +1,4 @@
-Qemu 
+                                                                                    Qemu 
 
 Check Virtualization Extension
 Run this command to make sure you’ve enabled virtualization in on your computer. It should be above 0
@@ -10,6 +10,15 @@ If the output is zero then go to bios settings and enable VT-x (Virtualization T
 Install QEMU and Virtual Machine Manager
 ```bash
 sudo apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
+```
+Arch Linux  
+```bash
+sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables libguestfs
+```
+On Arch Edit /etc/libvirt/libvirtd.conf (Change the following Lines) 
+```bash
+unix_sock_group = "libvirt"
+unix_sock_rw_perms = "0770"
 ```
 Verify that Libvirtd service is started
 ```bash
@@ -28,4 +37,9 @@ sudo usermod -aG libvirt-qemu $USER
 sudo usermod -aG kvm $USER
 sudo usermod -aG input $USER
 sudo usermod -aG disk $USER
+```
+On Arch
+```bash
+sudo usermod -a -G libvirt $(whoami)
+newgrp libvirt
 ```
